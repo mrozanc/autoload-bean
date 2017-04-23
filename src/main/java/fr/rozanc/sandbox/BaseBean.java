@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public abstract class BaseBean {
 
-    private static volatile boolean init = false;
+    static volatile boolean init = false;
 
     private static ApplicationContext ctx;
 
@@ -19,7 +19,6 @@ public abstract class BaseBean {
             ctx = new AnnotationConfigApplicationContext(configClass);
             init = false;
         }
-        ctx.getAutowireCapableBeanFactory().autowireBean(this);
     }
 
 }

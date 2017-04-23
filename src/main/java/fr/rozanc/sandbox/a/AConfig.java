@@ -16,4 +16,9 @@ public class AConfig extends BaseConfig {
         System.out.println("Creating myService bean");
         return new AService();
     }
+
+    @Bean
+    MyBean myBean() {
+        return new MyBean();
+    }
 }
