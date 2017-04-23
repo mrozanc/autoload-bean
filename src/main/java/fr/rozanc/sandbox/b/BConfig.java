@@ -1,4 +1,4 @@
-package fr.rozanc.sandbox.a;
+package fr.rozanc.sandbox.b;
 
 import fr.rozanc.sandbox.BaseBean;
 import fr.rozanc.sandbox.BaseConfig;
@@ -12,14 +12,14 @@ import org.springframework.context.annotation.aspectj.EnableSpringConfigured;
 
 @EnableLoadTimeWeaving(aspectjWeaving = EnableLoadTimeWeaving.AspectJWeaving.ENABLED)
 @EnableSpringConfigured
-@ComponentScan(basePackageClasses = {BaseBean.class, AService.class})
+@ComponentScan(basePackageClasses = {BaseBean.class, BService.class})
 @Configuration
 @Lazy
-public class AConfig extends BaseConfig {
+public class BConfig extends BaseConfig {
 
     @Bean
     MyService myService() {
-        System.out.println("a Creating myService bean");
-        return new AService();
+        System.out.println("b Creating myService bean");
+        return new BService();
     }
 }
